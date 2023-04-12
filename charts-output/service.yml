@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"hello-world-argocd-application","app.kubernetes.io/managed-by":"Helm","app.kubernetes.io/name":"helm-example","app.kubernetes.io/version":"2.0.0","helm.sh/chart":"helm-example-0.1.0"},"name":"hello-world-argocd-application-helm-example","namespace":"hello-world-app"},"spec":{"ports":[{"name":"http","port":80,"protocol":"TCP","targetPort":"http"}],"selector":{"app.kubernetes.io/instance":"hello-world-argocd-application","app.kubernetes.io/name":"helm-example"},"type":"LoadBalancer"}}
+  creationTimestamp: "2023-04-12T13:35:33Z"
+  finalizers:
+  - service.kubernetes.io/load-balancer-cleanup
+  labels:
+    app.kubernetes.io/instance: hello-world-argocd-application
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: helm-example
+    app.kubernetes.io/version: 2.0.0
+    helm.sh/chart: helm-example-0.1.0
+  name: hello-world-argocd-application-helm-example
+  namespace: hello-world-app
+  resourceVersion: "46251"
+  uid: b6060ee3-1e2f-46b3-a64d-eadf65fed386
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 172.20.177.238
+  clusterIPs:
+  - 172.20.177.238
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    nodePort: 31805
+    port: 80
+    protocol: TCP
+    targetPort: http
+  selector:
+    app.kubernetes.io/instance: hello-world-argocd-application
+    app.kubernetes.io/name: helm-example
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - hostname: ab6060ee31e2f46b3a64deadf65fed38-462396772.eu-west-1.elb.amazonaws.com

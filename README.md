@@ -1,4 +1,3 @@
 # hello-world
-First repository to get my hands wet.
 
-About the author: currently based in Beijing, China.
+Refer to https://gitlab.com/glahitette/gitops-argo-eks-demo/-/blob/main/README.md
